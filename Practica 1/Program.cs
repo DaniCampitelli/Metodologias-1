@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Metodologias_1
+namespace Metodologias_1.Practica_1
 {
     class Program
     {
@@ -378,4 +378,4 @@ namespace Metodologias_1
         }
     }
 }
-}
+

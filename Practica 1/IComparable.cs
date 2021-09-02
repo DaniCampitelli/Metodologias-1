@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologias_1
+namespace Metodologias_1.Practica_1
 {
-	public interface IComparable
-	{
-		bool sosIgual(IComparable C);
-		bool sosMenor(IComparable C);
-		bool sosMayor(IComparable C);
-	}
+    interface IComparable
+    {
+       bool sosIgual(IComparable a);
+        bool sosMenor(IComparable a);
+        bool sosMayor(IComparable a);
+    }
 }
