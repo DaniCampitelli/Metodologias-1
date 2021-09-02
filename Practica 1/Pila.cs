@@ -6,33 +6,84 @@ namespace Metodologias_1.Practica_1
 {
     class Pila : IColeccionable
     {
-        public Pila()
+        ArrayList pilaColeccionable;
+        public Pila(int tamanio)
         {
+            pilaColeccionable = new ArrayList(tamanio);
         }
 
-        public void agregar(Icomparable a)
+        public IComparable sacar()
         {
-            throw new NotImplementedException();
+            if (pilaColeccionable.Count > 0)
+            {
+                IComparable ultimoElemento = (IComparable)pilaColeccionable[pilaColeccionable.Count - 1];
+                pilaColeccionable.Remove(pilaColeccionable[pilaColeccionable.Count - 1]);
+                return ultimoElemento;
+
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
-        public bool contiene(Icomparable a)
+        public bool agregar(IComparable c)
         {
-            throw new NotImplementedException();
+            if (pilaColeccionable.Capacity > pilaColeccionable.Count)
+            {
+                pilaColeccionable.Add(c);
+                return true;
+            }
+            return false;
+        }
+
+        public bool contiene(IComparable comp)
+        {
+            foreach (IComparable elemento in this.pilaColeccionable)
+            {
+                if (comp.sosIgual(elemento))
+                {
+
+                    return true;
+                }
+
+            }
+            return false;
         }
 
         public int cuantos()
         {
-            throw new NotImplementedException();
+            return pilaColeccionable.Count;
         }
 
-        public int maximo()
+        public IComparable maximo()
         {
-            throw new NotImplementedException();
+            //crear validacion que no este vacia
+            IComparable maximo = (IComparable)pilaColeccionable[pilaColeccionable.Count - 1];
+            for (int i = 0; i < pilaColeccionable.Count; i++)
+            {
+                if (maximo.sosMenor((IComparable)pilaColeccionable[i]))
+                {
+                    maximo = (IComparable)pilaColeccionable[i];
+                }
+            }
+            return maximo;
+
         }
 
-        public int minimo()
+        public IComparable minimo()
         {
-            throw new NotImplementedException();
+            //crear validacion que no este vacia
+            IComparable minimo = (IComparable)pilaColeccionable[pilaColeccionable.Count - 1];
+            for (int i = 0; i < pilaColeccionable.Count; i++)
+            {
+                if (minimo.sosMayor((IComparable)pilaColeccionable[i]))
+                {
+                    minimo = (IComparable)pilaColeccionable[i];
+                }
+            }
+            return minimo;
         }
     }
 }

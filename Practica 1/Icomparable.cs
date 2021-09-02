@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Metodologias_1.Practica_1
 {
-    interface Icomparable
+    interface IComparable
     {
-       abstract bool sosIgual(Icomparable a);
-        bool sosMenor(Icomparable a);
-        bool sosMayor(Icomparable a);
+       bool sosIgual(IComparable a);
+        bool sosMenor(IComparable a);
+        bool sosMayor(IComparable a);
     }
 }
