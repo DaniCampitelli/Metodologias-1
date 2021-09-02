@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Metodologias_1
+﻿namespace Metodologias_1
 {
     interface IColeccionable
     {
