@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
 using System.Collections;
 
 namespace Metodologias_1
+
 {
     class Pila : IColeccionable
     {

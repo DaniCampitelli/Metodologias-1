@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Metodologias_1
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -378,4 +377,5 @@ namespace Metodologias_1
 
         }
     }
+}
 }

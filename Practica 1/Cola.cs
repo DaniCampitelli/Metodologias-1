@@ -1,3 +1,4 @@
+
 ﻿using System.Collections;
 
 namespace Metodologias_1
@@ -38,7 +39,9 @@ namespace Metodologias_1
 
         public bool contiene(IComparable comp)
         {
+
             foreach (IComparable elemento in colaColeccionable)
+
             {
                 if (comp.sosIgual(elemento))
                 {
