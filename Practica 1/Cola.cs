@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Metodologias_1.Practica_1
+﻿using System.Collections;
+
+namespace Metodologias_1
 {
     class Cola : IColeccionable
     {
@@ -41,7 +39,9 @@ namespace Metodologias_1.Practica_1
 
         public bool contiene(IComparable comp)
         {
-            foreach (IComparable elemento in this.colaColeccionable)
+
+            foreach (IComparable elemento in colaColeccionable)
+
             {
                 if (comp.sosIgual(elemento))
                 {

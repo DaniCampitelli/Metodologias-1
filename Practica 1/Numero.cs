@@ -2,34 +2,32 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologias_1.Practica_1
+
+namespace Metodologias_1
 {
-    class Numero:Icomparable
-    {
-        int valor;
-        public Numero(int n)
-        {
-            this.valor = n;
-        }
-        public int getValor ()
-        {
-            return valor;
-        }
+	class Numero : IComparable
+	{
+		private int valor;
+		public Numero(int v)
+		{
+			valor = v;
+		}
 
-        public bool sosIgual(Icomparable a)
-        {
-
-            return ((Numero)a).valor == valor;
-        }
-
-        public bool sosMayor(Icomparable a)
-        {
-            return ((Numero)a).valor < valor;
-        }
-
-        public bool sosMenor(Icomparable a)
-        {
-            return ((Numero)a).valor > valor;
-        }
-    }
+		public int getValor()
+		{
+			return this.valor;
+		}
+		public bool sosIgual(IComparable C)
+		{
+			return this.valor == ((Numero)C).getValor();
+		}
+		public bool sosMenor(IComparable C)
+		{
+			return this.valor < ((Numero)C).getValor();
+		}
+		public bool sosMayor(IComparable C)
+		{
+			return this.valor > ((Numero)C).getValor();
+		}
+	}
 }
