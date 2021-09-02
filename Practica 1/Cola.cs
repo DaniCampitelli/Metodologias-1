@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,33 +7,83 @@ namespace Metodologias_1.Practica_1
 {
     class Cola : IColeccionable
     {
-        public Cola()
+        ArrayList colaColeccionable;
+        public Cola(int tamanio)
         {
+            colaColeccionable = new ArrayList(tamanio);
         }
 
-        public void agregar(Icomparable a)
+        public IComparable sacar()
         {
-            throw new NotImplementedException();
+            if (colaColeccionable.Count > 0)
+            {
+                IComparable primerElemento = (IComparable)colaColeccionable[0];
+                colaColeccionable.Remove(colaColeccionable[0]);
+                return primerElemento;
+
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
-        public bool contiene(Icomparable a)
+        public bool agregar(IComparable c)
         {
-            throw new NotImplementedException();
+            if (colaColeccionable.Capacity > colaColeccionable.Count)
+            {
+                colaColeccionable.Add(c);
+                return true;
+            }
+            return false;
+        }
+
+        public bool contiene(IComparable comp)
+        {
+            foreach (IComparable elemento in this.colaColeccionable)
+            {
+                if (comp.sosIgual(elemento))
+                {
+                    return true;
+                }
+
+            }
+            return false;
         }
 
         public int cuantos()
         {
-            throw new NotImplementedException();
+            return colaColeccionable.Count;
         }
 
-        public int maximo()
+        public IComparable maximo()
         {
-            throw new NotImplementedException();
+            //crear validacion que no este vacia
+            IComparable maximo = (IComparable)colaColeccionable[colaColeccionable.Count - 1];
+            for (int i = 0; i < colaColeccionable.Count; i++)
+            {
+                if (maximo.sosMenor((IComparable)colaColeccionable[i]))
+                {
+                    maximo = (IComparable)colaColeccionable[i];
+                }
+            }
+            return maximo;
+
         }
 
-        public int minimo()
+        public IComparable minimo()
         {
-            throw new NotImplementedException();
+            //crear validacion que no este vacia
+            IComparable minimo = (IComparable)colaColeccionable[colaColeccionable.Count - 1];
+            for (int i = 0; i < colaColeccionable.Count; i++)
+            {
+                if (minimo.sosMayor((IComparable)colaColeccionable[i]))
+                {
+                    minimo = (IComparable)colaColeccionable[i];
+                }
+            }
+            return minimo;
         }
     }
 }
