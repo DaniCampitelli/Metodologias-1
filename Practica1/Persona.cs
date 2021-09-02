@@ -4,20 +4,16 @@ using System.Text;
 
 namespace Metodologias_1
 {
-    public class Persona : IComparable
+    class Persona : IComparable
     {
-        int dni;
-        string nombre;
-        private IEstrategiadecomparacion estrategia;
+
+        private String nombre;
+        private int dni;
+
         public Persona(String nom, int dni)
         {
             this.nombre = nom;
             this.dni = dni;
-        }
-
-        public int CompareTo(object obj)
-        {
-            throw new NotImplementedException();
         }
 
         public String getNombre()

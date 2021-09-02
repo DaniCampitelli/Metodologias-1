@@ -6,12 +6,10 @@ using System.Text;
 
 namespace Metodologias_1
 {
-    public class Alumno : Persona
+    class Alumno : Persona
     {
         private int legajo;
         private int promedio;
-
-
 
         public Alumno(String nom, int dni, int leg, int prom)
             : base(nom, dni)
@@ -19,7 +17,6 @@ namespace Metodologias_1
 
             this.legajo = leg;
             this.promedio = prom;
-            this.IEstrategiadecomparacion = new Estrategiapordni();
         }
 
         public int getLegajo()
@@ -34,22 +31,19 @@ namespace Metodologias_1
 
         public override bool sosIgual(IComparable C)
         {
-            return this.promedio == ((Alumno)C).getPromedio();
+            return this.legajo == ((Alumno)C).getLegajo();
         }
 
         public override bool sosMayor(IComparable C)
         {
-            return this.promedio > ((Alumno)C).getPromedio();
+            return this.legajo > ((Alumno)C).getLegajo();
         }
 
         public override bool sosMenor(IComparable C)
         {
-            return this.promedio < ((Alumno)C).getPromedio();
+            return this.legajo < ((Alumno)C).getLegajo();
         }
-        void Cambiarestrategia(IEstrategiadecomparacion nuevaestrategia)
-        {
-            this.estrategia = nuevaestrategia;
-        }
+
     }
 
 }

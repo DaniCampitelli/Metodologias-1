@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Metodologias_1
 {
- 
+
     class Program
     {
         static void Main(string[] args)
@@ -70,6 +70,28 @@ namespace Metodologias_1
 
             }
 
+
+            void InformarAlumnos(IColeccionable cole)
+            {
+                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
+                Console.WriteLine("El Legajo minimo es " + ((Alumno)cole.minimo()).getLegajo());
+                Console.WriteLine("El Legajo maximo es " + ((Alumno)cole.maximo()).getLegajo());
+
+                Console.WriteLine("Ingrese el legajo a buscar ");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Alumno legajoBuscado = new Alumno("x", 0, n1, 0);
+                Console.WriteLine("valor ingresado " + legajoBuscado.getLegajo());
+                if (cole.contiene(legajoBuscado) == true)
+                {
+                    Console.WriteLine("El legajo buscado leído está en la colección");
+                }
+                else
+                {
+                    Console.WriteLine("El legajo buscado NO está en la colección");
+                }
+
+
+            }
 
             void llenarPersonas(IColeccionable cole)
             {
@@ -179,14 +201,16 @@ namespace Metodologias_1
                 int promedioR = promedioRandom.Next(11, 99);
 
 
-                Persona persona = new Alumno(listaDeNombres[puntero.Next(listaDeNombres.Count - 1)], dniR, legajoR, promedioR);
+                Alumno alumno = new Alumno(listaDeNombres[puntero.Next(listaDeNombres.Count - 1)], dniR, legajoR, promedioR);
 
-                while (cole.agregar(persona) == true)
+                while (cole.agregar(alumno) == true)
 
                 {
-                    Console.WriteLine("Agregando  alumno " + persona.getNombre() + " con DNI " + persona.getDni());
+                    Console.WriteLine("Agregando  elemento " + alumno.getNombre() + " con DNI " + alumno.getDni() + " ,legajo: " + alumno.getLegajo() + " y un promedio de: " + alumno.getPromedio());
                     dniR = dniRandom.Next(111111, 99999999);
-                    persona = new Alumno(listaDeNombres[puntero.Next(listaDeNombres.Count - 1)], dniR, legajoR, promedioR);
+                    legajoR = legajoRandom.Next(1111, 99999);
+                    promedioR = promedioRandom.Next(11, 99);
+                    alumno = new Alumno(listaDeNombres[puntero.Next(listaDeNombres.Count - 1)], dniR, legajoR, promedioR);
 
 
                 }
@@ -201,15 +225,16 @@ namespace Metodologias_1
             llenarAlumnos(pilaPersonas);
             llenarAlumnos(colaPersonas);
 
-            // informar(pilaPersonas);
+
 
 
 
             ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
 
-            InformarPersona(c);
+            InformarAlumnos(c);
 
 
+            // informar(pilaPersonas);
 
             //Console.WriteLine("Maximo "+ ((Persona)c.maximo()).getDni());
 
@@ -221,13 +246,13 @@ namespace Metodologias_1
             //Persona test2 = new Persona("Patricio", 29265789);
 
             // Console.WriteLine("La persona" + test.getNombre() + "tiene el dni "+ test.getDni()+ "y su dni es mayor"+ test.sosMayor(test2) );
-
+            /*
             Alumno test = new Alumno("Esteban", 30265789, 16488, 89);
 
             Alumno test2 = new Alumno("Patricio", 29265789, 22478, 70);
 
-            Console.WriteLine("La persona " + test.getNombre() + " tiene el promedio " + test.getPromedio() + " y su promedio es mayor " + test.sosMayor(test2) + " que el de " + test2.getNombre());
-
+            Console.WriteLine("La persona " + test.getNombre() + " tiene el promedio "+ test.getPromedio()+ " y su promedio es mayor "+ test.sosMayor(test2) + " que el de "+ test2.getNombre());
+            */
 
 
 
@@ -317,9 +342,40 @@ namespace Metodologias_1
             //{
             //    Console.WriteLine("Sacando Elemento  " + ((Numero)test2.sacar()).getValor());
             //}
+            /*
+            string author1 = "Mahesh Chand";
+            string author2 = "Praveen Kumar";
+            string author3 = "Mahesh Chand";
 
+            Console.WriteLine((String.Equals(author1, author3)));
+            */
+
+            // STRATEGY
+            /*          Console.WriteLine("Esto es el STRATEGY");
+
+                      Alumno test = new Alumno("Patricio", 30265789, 16488, 89);//los legajos los puse iguales 
+
+                      Alumno test2 = new Alumno("Patricio", 29265789, 16488, 70);
+
+                      Console.WriteLine("La persona " + test.getNombre() + " tiene el promedio " + test.getPromedio() + " y su promedio es mayor " + test.sosMayor(test2) + " que el de " + test2.getNombre());
+
+
+                      Console.WriteLine("Esto es el STRATEGY");
+
+
+                      Console.WriteLine(test.sosIgual(test2));//false (esta comparando los dni )
+
+
+                      IEstrategiaDeComparacion comparapornom = new PorNombre(test);//instancio otra estrategia
+
+                      test.Cambiarestrategia(comparapornom);//cambio la estrategia
+                      Console.WriteLine(test.sosIgual(test2));//true porque los nombres son iguales
+                      IEstrategiaDeComparacion porlegajo = new PorLegajo(test);//instancio otra estrategia
+                      test.Cambiarestrategia(porlegajo);//cambio la estrategia
+                      Console.WriteLine(test.sosMayor(test2));//true porque los nombres son iguales
+
+          */
 
         }
-
     }
 }
