@@ -169,7 +169,6 @@ namespace Metodologias_1.Practica_1
                  "Ines Tornudo",
                  "Irma Tematica",
                  "Isaac A Mocos",
-                 "Ivan Pirito",
                  "Jacobo Quete",
                  "Jaime Talero",
                  "Jazmin Secto",
