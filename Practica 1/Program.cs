@@ -9,7 +9,7 @@ namespace Metodologias_1.Practica_1
         {
             Console.WriteLine("Empecemos!");
 
-
+            //EJERCICIO 5
             void llenar(IColeccionable cole)
             {
                 Random numeroRandom = new Random();
@@ -22,13 +22,12 @@ namespace Metodologias_1.Practica_1
                 }
                 Console.WriteLine("elemento lleno");
             }
+            
+            // EJERCICIO 6 - INFORMAR
 
             void informar(IColeccionable cole)
             {
                 Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-
-
-
                 Console.WriteLine("El minimo elemento es " + ((Numero)cole.minimo()).getValor());
                 Console.WriteLine("El maximo elemento es " + ((Numero)cole.maximo()).getValor());
 
@@ -47,50 +46,35 @@ namespace Metodologias_1.Practica_1
             }
 
 
-            void InformarPersona(IColeccionable cole)
-            {
-                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-                Console.WriteLine("El DNI minimo es " + ((Persona)cole.minimo()).getDni());
-                Console.WriteLine("El DNI maximo es " + ((Persona)cole.maximo()).getDni());
-
-                Console.WriteLine("Ingrese un valor a buscar ");
-                int n1 = Convert.ToInt32(Console.ReadLine());
-                Persona dniBuscado = new Persona("nombre X ", n1);
-                Console.WriteLine("valor ingresado " + dniBuscado.getDni());
-                if (cole.contiene(dniBuscado) == true)
-                {
-                    Console.WriteLine("El elemento leído está en la colección");
-                }
-                else
-                {
-                    Console.WriteLine("El elemento leído NO está en la colección");
-                }
+            //EJERCICIO 7
+            /*
+            IColeccionable pila = new Pila(10);
+            IColeccionable cola = new Cola(10);
+            llenar(pila);
+            llenar(cola);
+            informar(pila);
+            informar(cola);
+            */
 
 
-            }
+            
+
+            
 
 
-            void InformarAlumnos(IColeccionable cole)
-            {
-                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-                Console.WriteLine("El Legajo minimo es " + ((Alumno)cole.minimo()).getLegajo());
-                Console.WriteLine("El Legajo maximo es " + ((Alumno)cole.maximo()).getLegajo());
-
-                Console.WriteLine("Ingrese el legajo a buscar ");
-                int n1 = Convert.ToInt32(Console.ReadLine());
-                Alumno legajoBuscado = new Alumno("x", 0, n1, 0);
-                Console.WriteLine("valor ingresado " + legajoBuscado.getLegajo());
-                if (cole.contiene(legajoBuscado) == true)
-                {
-                    Console.WriteLine("El legajo buscado leído está en la colección");
-                }
-                else
-                {
-                    Console.WriteLine("El legajo buscado NO está en la colección");
-                }
-
-
-            }
+            //EJECERCICIO 9 
+            /*
+            IColeccionable pila = new Pila(20);
+            IColeccionable cola = new Cola(20);
+            IColeccionable multiple = new ColeccionMultiple(pila, cola);
+            llenar(pila);
+            llenar(cola);
+            informar(pila);
+            informar(cola);
+            informar(multiple);
+            */
+            // EJERCIO 11 CREAR CLASE PERSONA
+            // EJERCICIO 12 -- LLENAR PERSONA
 
             void llenarPersonas(IColeccionable cole)
             {
@@ -151,6 +135,37 @@ namespace Metodologias_1.Practica_1
                 Console.WriteLine("elemento lleno de personas");
             }
 
+            void InformarPersona(IColeccionable cole)
+            {
+                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
+                Console.WriteLine("El DNI minimo es " + ((Persona)cole.minimo()).getDni());
+                Console.WriteLine("El DNI maximo es " + ((Persona)cole.maximo()).getDni());
+
+                Console.WriteLine("Ingrese un valor a buscar ");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Persona dniBuscado = new Persona("nombre X ", n1);
+                Console.WriteLine("valor ingresado " + dniBuscado.getDni());
+                if (cole.contiene(dniBuscado) == true)
+                {
+                    Console.WriteLine("El elemento leído está en la colección");
+                }
+                else
+                {
+                    Console.WriteLine("El elemento leído NO está en la colección");
+                }
+
+
+            }
+           /*
+            IColeccionable pila = new Pila(5);
+            IColeccionable cola = new Cola(5);
+            IColeccionable multiple = new ColeccionMultiple(pila, cola);
+            llenarPersonas(pila);
+            llenarPersonas(cola);
+            InformarPersona(multiple);
+           */
+            // EJERCICIO 15 - CREAR ALUMNO
+            // EJERCICIO 16 - LLENAR ALUMNO
             void llenarAlumnos(IColeccionable cole)
             {
                 List<String> listaDeNombres = new List<string>()
@@ -216,23 +231,53 @@ namespace Metodologias_1.Practica_1
                 Console.WriteLine("elemento lleno de Alumnos");
             }
 
+            void InformarAlumnos(IColeccionable cole)
+            {
+                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
+                Console.WriteLine("El Legajo minimo es " + ((Alumno)cole.minimo()).getLegajo());
+                Console.WriteLine("El Legajo maximo es " + ((Alumno)cole.maximo()).getLegajo());
+
+                Console.WriteLine("Ingrese el legajo a buscar ");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Alumno legajoBuscado = new Alumno("x", 0, n1, 0);
+                Console.WriteLine("valor ingresado " + legajoBuscado.getLegajo());
+                if (cole.contiene(legajoBuscado) == true)
+                {
+                    Console.WriteLine("El legajo buscado leído está en la colección");
+                }
+                else
+                {
+                    Console.WriteLine("El legajo buscado NO está en la colección");
+                }
+
+
+            }
+
+            // EJERCICIO 17
+
+            IColeccionable pila = new Pila(5);
+            IColeccionable cola = new Cola(5);
+            IColeccionable multiple = new ColeccionMultiple(pila, cola);
+            llenarAlumnos(pila);
+            llenarAlumnos(cola);
+            InformarAlumnos(multiple);
+            /*
+            // EJERCICIO 18 
+            //modificar informar alumno para buscar por legajo o dni
+
+
             IColeccionable pilaPersonas = new Pila(20);
             IColeccionable colaPersonas = new Cola(20);
 
-
             llenarAlumnos(pilaPersonas);
             llenarAlumnos(colaPersonas);
-
-
-
-
 
             ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
 
             InformarAlumnos(c);
 
 
-            // informar(pilaPersonas);
+            //informar(pilaPersonas);
 
             //Console.WriteLine("Maximo "+ ((Persona)c.maximo()).getDni());
 
@@ -253,30 +298,16 @@ namespace Metodologias_1.Practica_1
             */
 
 
-
-
-
-
-
-
-
-
             //Numero n1, n2, n3;
             //n1 = new Numero(2);
             //n2 = new Numero(5);
             // n3 = new Numero(3);
 
 
-
-
             //Console.WriteLine("es igual" + n1.sosIgual(n2));
             //Console.WriteLine("es menor" + n1.sosMenor(n2));
             //Console.WriteLine("es mayor" + n1.sosMayor(n2));
             //Console.WriteLine("n1 vale " + n1.getValor());
-
-
-
-
 
 
             //Agregando elementos y mostrando si es exitoso o no
@@ -300,14 +331,11 @@ namespace Metodologias_1.Practica_1
             //  }
 
 
-
-
             //informar(test);
 
             // llenar(colaP);
 
             //informar(test2);
-
 
 
             /*Console.WriteLine(c.contiene(n1));
@@ -319,9 +347,6 @@ namespace Metodologias_1.Practica_1
 
             //informar(pilaP);
             //informar(colaP);
-
-
-
 
             //informar(test);
             //Console.WriteLine(test.cuantos());
