@@ -1,7 +1,7 @@
 
 ﻿using System.Collections;
 
-namespace Metodologias_1
+namespace Metodologias_1.Practica_1
 {
     class Cola : IColeccionable
     {

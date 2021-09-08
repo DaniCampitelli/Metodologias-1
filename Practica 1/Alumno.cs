@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace Metodologias_1
+namespace Metodologias_1.Practica_1
 {
     class Alumno : Persona
     {
