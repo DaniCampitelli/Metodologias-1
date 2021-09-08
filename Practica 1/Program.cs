@@ -169,7 +169,6 @@ namespace Metodologias_1.Practica_1
                  "Ines Tornudo",
                  "Irma Tematica",
                  "Isaac A Mocos",
-                 "Ivan Pirito",
                  "Jacobo Quete",
                  "Jaime Talero",
                  "Jazmin Secto",
@@ -217,23 +216,39 @@ namespace Metodologias_1.Practica_1
                 Console.WriteLine("elemento lleno de Alumnos");
             }
 
+
+            /*
+            //#                     EJERCICIO 7
+
+            
+
+            /*
+            //                             EJERCICIO 9  
+            IColeccionable pila = new Pila(10);
+            IColeccionable cola = new Cola(10);
+            llenar(pila);
+            llenar(cola);
+            informar(pila);
+            informar(cola);
+
+            informar();
+            //################################################################################
+
             IColeccionable pilaPersonas = new Pila(20);
             IColeccionable colaPersonas = new Cola(20);
 
-
+            
             llenarAlumnos(pilaPersonas);
             llenarAlumnos(colaPersonas);
-
-
-
-
-
+            informar!
             ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
-
             InformarAlumnos(c);
+            */
 
 
-            // informar(pilaPersonas);
+            //Ej 7
+            //informar(pilaPersonas);
+            //informar(colaPersonas);
 
             //Console.WriteLine("Maximo "+ ((Persona)c.maximo()).getDni());
 
