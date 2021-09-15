@@ -46,52 +46,6 @@ namespace Metodologias_1.Practica_1
                 }
             }
 
-
-            void InformarPersona(IColeccionable cole)
-            {
-                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-                Console.WriteLine("El DNI minimo es " + ((Persona)cole.minimo()).getDni());
-                Console.WriteLine("El DNI maximo es " + ((Persona)cole.maximo()).getDni());
-
-                Console.WriteLine("Ingrese un valor a buscar ");
-                int n1 = Convert.ToInt32(Console.ReadLine());
-                Persona dniBuscado = new Persona("nombre X ", n1);
-                Console.WriteLine("valor ingresado " + dniBuscado.getDni());
-                if (cole.contiene(dniBuscado) == true)
-                {
-                    Console.WriteLine("El elemento leído está en la colección");
-                }
-                else
-                {
-                    Console.WriteLine("El elemento leído NO está en la colección");
-                }
-
-
-            }
-
-
-            void InformarAlumnos(IColeccionable cole)
-            {
-                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-                Console.WriteLine("El Legajo minimo es " + ((Alumno)cole.minimo()).getLegajo());
-                Console.WriteLine("El Legajo maximo es " + ((Alumno)cole.maximo()).getLegajo());
-
-                Console.WriteLine("Ingrese el legajo a buscar ");
-                int n1 = Convert.ToInt32(Console.ReadLine());
-                Alumno legajoBuscado = new Alumno("x", 0, n1, 0);
-                Console.WriteLine("valor ingresado " + legajoBuscado.getLegajo());
-                if (cole.contiene(legajoBuscado) == true)
-                {
-                    Console.WriteLine("El legajo buscado leído está en la colección");
-                }
-                else
-                {
-                    Console.WriteLine("El legajo buscado NO está en la colección");
-                }
-
-
-            }
-
             void llenarPersonas(IColeccionable cole)
             {
                 List<String> listaDeNombres = new List<string>()
@@ -149,6 +103,28 @@ namespace Metodologias_1.Practica_1
                 }
 
                 Console.WriteLine("elemento lleno de personas");
+            }
+
+            void InformarPersona(IColeccionable cole)
+            {
+                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
+                Console.WriteLine("El DNI minimo es " + ((Persona)cole.minimo()).getDni());
+                Console.WriteLine("El DNI maximo es " + ((Persona)cole.maximo()).getDni());
+
+                Console.WriteLine("Ingrese un valor a buscar ");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Persona dniBuscado = new Persona("nombre X ", n1);
+                Console.WriteLine("valor ingresado " + dniBuscado.getDni());
+                if (cole.contiene(dniBuscado) == true)
+                {
+                    Console.WriteLine("El elemento leído está en la colección");
+                }
+                else
+                {
+                    Console.WriteLine("El elemento leído NO está en la colección");
+                }
+
+
             }
 
             void llenarAlumnos(IColeccionable cole)
@@ -216,164 +192,145 @@ namespace Metodologias_1.Practica_1
                 Console.WriteLine("elemento lleno de Alumnos");
             }
 
-            IColeccionable pilaPersonas = new Pila(20);
-            IColeccionable colaPersonas = new Cola(20);
+            void InformarAlumnos(IColeccionable cole)
+            {
+                Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
+                Console.WriteLine("El Legajo minimo es " + ((Alumno)cole.minimo()).getLegajo());
+                Console.WriteLine("El Legajo maximo es " + ((Alumno)cole.maximo()).getLegajo());
 
+                Console.WriteLine("Ingrese el legajo a buscar ");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Alumno legajoBuscado = new Alumno("x", 0, n1, n1);//
+                //Console.WriteLine("valor ingresado " + legajoBuscado.getLegajo());
+                if (cole.contiene(legajoBuscado) == true)
+                {
+                    Console.WriteLine("El valor buscado está en la colección");
+                }
+                else
+                {
+                    Console.WriteLine("El valor buscado NO está en la colección");
+                }
 
-            llenarAlumnos(pilaPersonas);
-            llenarAlumnos(colaPersonas);
 
 
 
 
 
-            ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
 
-            InformarAlumnos(c);
 
 
-            // informar(pilaPersonas);
 
-            //Console.WriteLine("Maximo "+ ((Persona)c.maximo()).getDni());
+                /*
 
-            //Console.WriteLine("minimo " +((Persona)c.minimo()).getDni());
+               //#################### Ej 7 ################################
 
 
-            //Persona test = new Persona("Esteban", 30265789);
+               pila = new Pila()
+               cola = new Cola()
+               llenar(pila)
+               llenar(cola)
+               informar(pila)
+               informar(cola)
 
-            //Persona test2 = new Persona("Patricio", 29265789);
+               ####################### EJ 9 ###############################
 
-            // Console.WriteLine("La persona" + test.getNombre() + "tiene el dni "+ test.getDni()+ "y su dni es mayor"+ test.sosMayor(test2) );
-            /*
-            Alumno test = new Alumno("Esteban", 30265789, 16488, 89);
+                // IColeccionable pila = new Pila(10);
+               //IColeccionable cola = new Cola(10);
+              // llenar(pila);
+              // llenar(cola);
+               //informar(pila);
+              // informar(cola);
 
-            Alumno test2 = new Alumno("Patricio", 29265789, 22478, 70);
 
-            Console.WriteLine("La persona " + test.getNombre() + " tiene el promedio "+ test.getPromedio()+ " y su promedio es mayor "+ test.sosMayor(test2) + " que el de "+ test2.getNombre());
-            */
 
 
+               ######################## EJ 13###############################
 
+               pila = new Pila()
+               cola = new Cola()
+               multiple = new ColeccionMultiple(pila, cola)
+               llenarPersonas(pila)
+               llenarPersonas(cola)
+               informar(multiple)
 
+               */
 
+                // ##################### EJ 17################################
 
+                IColeccionable pilaPersonas = new Pila(20);
+                IColeccionable colaPersonas = new Cola(20);
+                llenarAlumnos(pilaPersonas);
+                llenarAlumnos(colaPersonas);
 
+                ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
+                InformarAlumnos(c);
 
 
 
-            //Numero n1, n2, n3;
-            //n1 = new Numero(2);
-            //n2 = new Numero(5);
-            // n3 = new Numero(3);
 
 
 
 
-            //Console.WriteLine("es igual" + n1.sosIgual(n2));
-            //Console.WriteLine("es menor" + n1.sosMenor(n2));
-            //Console.WriteLine("es mayor" + n1.sosMayor(n2));
-            //Console.WriteLine("n1 vale " + n1.getValor());
+                // test de contiene "positivo"
+                //Console.WriteLine("test de ALE Contiene n1 ? " + test.contiene(n1));
+                //test de cuantos
+                //Console.WriteLine("test tiene " + test.cuantos() + " elementos");
+                //test de contiene "negativo"
+                //Console.WriteLine("test Contiene n3 ? " + test.contiene(n3));
+                // test de mayor numero
+                //Console.WriteLine("el mayor es numero es  " + ((Numero)test.maximo()).getValor());
 
+                //test de sacar
+                //  while (test.cuantos() > 0)
+                //  {
+                //      Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
+                //  }
 
 
 
 
+                //informar(test);
 
-            //Agregando elementos y mostrando si es exitoso o no
-            //Console.WriteLine("Agregando  n1 " + test.agregar(n1));
-            //Console.WriteLine("Agregando  n2 " + test.agregar(n2));
-            //Console.WriteLine("Agregando  n3 " + test.agregar(n3));
+                // llenar(colaP);
 
-            // test de contiene "positivo"
-            //Console.WriteLine("test de ALE Contiene n1 ? " + test.contiene(n1));
-            //test de cuantos
-            //Console.WriteLine("test tiene " + test.cuantos() + " elementos");
-            //test de contiene "negativo"
-            //Console.WriteLine("test Contiene n3 ? " + test.contiene(n3));
-            // test de mayor numero
-            //Console.WriteLine("el mayor es numero es  " + ((Numero)test.maximo()).getValor());
+                //informar(test2);
 
-            //test de sacar
-            //  while (test.cuantos() > 0)
-            //  {
-            //      Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
-            //  }
 
 
+                /*Console.WriteLine(c.contiene(n1));
 
+                Console.WriteLine(c.cuantos());
 
-            //informar(test);
+                Console.WriteLine(((Numero)c.maximo()).getValor());
+                */
 
-            // llenar(colaP);
+                //informar(pilaP);
+                //informar(colaP);
 
-            //informar(test2);
 
 
 
-            /*Console.WriteLine(c.contiene(n1));
+                //informar(test);
+                //Console.WriteLine(test.cuantos());
 
-            Console.WriteLine(c.cuantos());
+                //test de sacar
+                //while (test.cuantos() > 0)
+                //{
+                //Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
+                //}
 
-            Console.WriteLine(((Numero)c.maximo()).getValor());
-            */
 
-            //informar(pilaP);
-            //informar(colaP);
+                //llenar(test2);
+                //Console.WriteLine(test2.cuantos());
+                //test de sacar
+                //while (test2.cuantos() > 0)
+                //{
+                //    Console.WriteLine("Sacando Elemento  " + ((Numero)test2.sacar()).getValor());
+                //}
 
 
 
-
-            //informar(test);
-            //Console.WriteLine(test.cuantos());
-
-            //test de sacar
-            //while (test.cuantos() > 0)
-            //{
-            //Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
-            //}
-
-
-            //llenar(test2);
-            //Console.WriteLine(test2.cuantos());
-            //test de sacar
-            //while (test2.cuantos() > 0)
-            //{
-            //    Console.WriteLine("Sacando Elemento  " + ((Numero)test2.sacar()).getValor());
-            //}
-            /*
-            string author1 = "Mahesh Chand";
-            string author2 = "Praveen Kumar";
-            string author3 = "Mahesh Chand";
-
-            Console.WriteLine((String.Equals(author1, author3)));
-            */
-
-            // STRATEGY
-            /*          Console.WriteLine("Esto es el STRATEGY");
-
-                      Alumno test = new Alumno("Patricio", 30265789, 16488, 89);//los legajos los puse iguales 
-
-                      Alumno test2 = new Alumno("Patricio", 29265789, 16488, 70);
-
-                      Console.WriteLine("La persona " + test.getNombre() + " tiene el promedio " + test.getPromedio() + " y su promedio es mayor " + test.sosMayor(test2) + " que el de " + test2.getNombre());
-
-
-                      Console.WriteLine("Esto es el STRATEGY");
-
-
-                      Console.WriteLine(test.sosIgual(test2));//false (esta comparando los dni )
-
-
-                      IEstrategiaDeComparacion comparapornom = new PorNombre(test);//instancio otra estrategia
-
-                      test.Cambiarestrategia(comparapornom);//cambio la estrategia
-                      Console.WriteLine(test.sosIgual(test2));//true porque los nombres son iguales
-                      IEstrategiaDeComparacion porlegajo = new PorLegajo(test);//instancio otra estrategia
-                      test.Cambiarestrategia(porlegajo);//cambio la estrategia
-                      Console.WriteLine(test.sosMayor(test2));//true porque los nombres son iguales
-
-          */
-
+            }
         }
     }
 }

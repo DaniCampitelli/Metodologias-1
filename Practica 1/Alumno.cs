@@ -29,9 +29,10 @@ namespace Metodologias_1.Practica_1
             return this.promedio;
         }
 
-        public override bool sosIgual(IComparable C)
+        public override bool sosIgual(IComparable a)
         {
-            return this.legajo == ((Alumno)C).getLegajo();
+            return this.legajo == ((Alumno)a).getLegajo();
+               
         }
 
         public override bool sosMayor(IComparable C)
