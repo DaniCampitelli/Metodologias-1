@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologias_1.Practica_2;
 
 namespace Metodologias_1.Practica_1
 {
