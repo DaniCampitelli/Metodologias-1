@@ -8,8 +8,11 @@ namespace Metodologias_1.Practica_1
         static void Main(string[] args)
         {
             Console.WriteLine("Empecemos!");
-
-            //EJERCICIO 5
+            //EJERCICIO 1 - INTERFACE COMPARABLE
+            //EJERCICIO 2 - CLASE NUMERO E IMPLEMENTE COMPARABLE
+            //EJERCICIO 3 - INTERCACE COLECCIONABLE
+            //EJERCICIO 4 - CREAR CLASES PILA Y COLA
+            //EJERCICIO 5 - FUNCION LLENAR
             void llenar(IColeccionable cole)
             {
                 Random numeroRandom = new Random();
@@ -23,7 +26,7 @@ namespace Metodologias_1.Practica_1
                 Console.WriteLine("elemento lleno");
             }
             
-            // EJERCICIO 6 - INFORMAR
+            // EJERCICIO 6 - FUNCION INFORMAR
 
             void informar(IColeccionable cole)
             {
@@ -55,14 +58,8 @@ namespace Metodologias_1.Practica_1
             informar(pila);
             informar(cola);
             */
-
-
-            
-
-            
-
-
-            //EJECERCICIO 9 
+            //EJERCICIO 8 - CREAR CLASE ColeccionMultiple implemente la interface Coleccionable
+            //EJERCICIO 9 
             /*
             IColeccionable pila = new Pila(20);
             IColeccionable cola = new Cola(20);
@@ -73,8 +70,9 @@ namespace Metodologias_1.Practica_1
             informar(cola);
             informar(multiple);
             */
+            // EJERCICIO - REFLEXION
             // EJERCIO 11 CREAR CLASE PERSONA
-            // EJERCICIO 12 -- LLENAR PERSONA
+            // EJERCICIO 12 CREAR LLENAR PERSONA
 
             void llenarPersonas(IColeccionable cole)
             {
@@ -156,14 +154,18 @@ namespace Metodologias_1.Practica_1
 
 
             }
-           /*
-            IColeccionable pila = new Pila(5);
-            IColeccionable cola = new Cola(5);
-            IColeccionable multiple = new ColeccionMultiple(pila, cola);
-            llenarPersonas(pila);
-            llenarPersonas(cola);
-            InformarPersona(multiple);
-           */
+            
+            // EJERCICIO 13 - MODIFICAR MAIN --> CREAR COLECCION MULTIPLE
+            /*
+             IColeccionable pila = new Pila(5);
+             IColeccionable cola = new Cola(5);
+             IColeccionable multiple = new ColeccionMultiple(pila, cola);
+             llenarPersonas(pila);
+             llenarPersonas(cola);
+             InformarPersona(multiple);
+            */
+
+            // EJERCICIO 14 - REFLEXION
             // EJERCICIO 15 - CREAR ALUMNO
             // EJERCICIO 16 - LLENAR ALUMNO
             void llenarAlumnos(IColeccionable cole)

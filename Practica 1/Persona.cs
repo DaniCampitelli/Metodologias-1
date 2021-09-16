@@ -10,6 +10,8 @@ namespace Metodologias_1.Practica_1
         private String nombre;
         private int dni;
 
+        public IEstrategiaDeComparacion estrategia;
+
         public Persona(String nom, int dni)
         {
             this.nombre = nom;

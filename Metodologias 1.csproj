@@ -6,8 +6,4 @@
     <RootNamespace>Metodologias_1</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Practica 2\" />
-  </ItemGroup>
-
 </Project>
