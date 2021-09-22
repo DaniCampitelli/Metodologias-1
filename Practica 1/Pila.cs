@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using System.Collections;
+using Metodologias_1.Practica_2;
 
 namespace Metodologias_1.Practica_1
 

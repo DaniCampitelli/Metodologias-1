@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologias_1.Practica_2;
 
 namespace Metodologias_1.Practica_1
 {
@@ -9,11 +10,13 @@ namespace Metodologias_1.Practica_1
 
         private String nombre;
         private int dni;
+        public IEstrategiaDeComparacion estrategia;
 
         public Persona(String nom, int dni)
         {
             this.nombre = nom;
             this.dni = dni;
+            this.estrategia = new PorDni();
         }
 
         public String getNombre()
@@ -30,17 +33,24 @@ namespace Metodologias_1.Practica_1
 
         public virtual bool sosIgual(IComparable C)
         {
-            return this.dni == ((Persona)C).getDni();
+            return C.sosIgual(this);
         }
 
         public virtual bool sosMayor(IComparable C)
         {
-            return this.dni > ((Persona)C).getDni();
+            return C.sosMayor(this);
         }
 
         public virtual bool sosMenor(IComparable C)
         {
-            return this.dni < ((Persona)C).getDni();
+            return C.sosMenor(this);
+        }
+        public void CambiarEstrategia(IEstrategiaDeComparacion nuevaestrategia)
+        {
+            {
+                this.estrategia = nuevaestrategia;
+
+            }
         }
     }
 }

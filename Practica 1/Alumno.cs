@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologias_1.Practica_2;
 
 
 
@@ -31,18 +32,18 @@ namespace Metodologias_1.Practica_1
 
         public override bool sosIgual(IComparable a)
         {
-            return this.legajo == ((Alumno)a).getLegajo();
-               
+            return estrategia.sosIgual(this, a);
+
         }
 
         public override bool sosMayor(IComparable C)
         {
-            return this.legajo > ((Alumno)C).getLegajo();
+            return estrategia.sosMayor(this, C);
         }
 
         public override bool sosMenor(IComparable C)
         {
-            return this.legajo < ((Alumno)C).getLegajo();
+            return estrategia.sosMayor(this, C);
         }
 
     }
