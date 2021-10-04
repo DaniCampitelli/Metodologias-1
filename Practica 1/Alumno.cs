@@ -43,7 +43,12 @@ namespace Metodologias_1.Practica_1
 
         public override bool sosMenor(IComparable C)
         {
-            return estrategia.sosMayor(this, C);
+            return estrategia.sosMenor(this, C);
+        }
+        public void cambiarEstrategia(IEstrategiaDeComparacion nuevaestrategia)
+        {
+            this.estrategia = nuevaestrategia;
+
         }
 
     }
