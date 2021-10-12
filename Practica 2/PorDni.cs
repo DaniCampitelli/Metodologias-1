@@ -8,7 +8,8 @@ namespace Metodologias_1.Practica_2
 {
     class PorDni : IEstrategiaDeComparacion
     {
-        public bool sosIgual(IComparable a, IComparable b)
+        
+       public bool sosIgual(IComparable a, IComparable b)
         {
             return ((Alumno)a).getDni() == ((Alumno)b).getDni();
         }

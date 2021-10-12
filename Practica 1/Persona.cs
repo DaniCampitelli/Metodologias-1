@@ -45,7 +45,7 @@ namespace Metodologias_1.Practica_1
         {
             return C.sosMenor(this);
         }
-        public void CambiarEstrategia(IEstrategiaDeComparacion nuevaestrategia)
+        public void cambiarEstrategia(IEstrategiaDeComparacion nuevaestrategia)
         {
             {
                 this.estrategia = nuevaestrategia;

@@ -5,6 +5,7 @@ using Metodologias_1.Practica_2;
 
 namespace Metodologias_1.Practica_1
 {
+
     class Program
     {
         static void Main(string[] args)
@@ -110,8 +111,8 @@ namespace Metodologias_1.Practica_1
             void InformarPersona(IColeccionable cole)
             {
                 Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-                Console.WriteLine("El DNI minimo es " + ((Persona)cole.minimo()).getDni());
-                Console.WriteLine("El DNI maximo es " + ((Persona)cole.maximo()).getDni());
+                Console.WriteLine("El minimo es " + ((Persona)cole.minimo()).getNombre());
+                Console.WriteLine("El maximo es " + ((Persona)cole.maximo()).getNombre());
 
                 Console.WriteLine("Ingrese un valor a buscar ");
                 int n1 = Convert.ToInt32(Console.ReadLine());
@@ -175,9 +176,33 @@ namespace Metodologias_1.Practica_1
                 int dniR = dniRandom.Next(111111, 99999999);
                 int legajoR = legajoRandom.Next(1111, 99999);
                 int promedioR = promedioRandom.Next(11, 99);
+                int punteroR = puntero.Next(listaDeNombres.Count - 1);
+                IEstrategiaDeComparacion est = new PorDni();
+            
 
 
                 Alumno alumno = new Alumno(listaDeNombres[puntero.Next(listaDeNombres.Count - 1)], dniR, legajoR, promedioR);
+                Console.WriteLine("Como desea comparar? 1-Por Legajo  2-Por Promedio 3-Por Dni ");
+                int opcion = Convert.ToInt32(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        est = new PorLegajo();
+                        alumno.cambiarEstrategia(est);
+                        Console.WriteLine("Vamos a comparar por legajo ");
+                        break;
+                    case 2:
+                        est = new PorPromedio();
+                        alumno.cambiarEstrategia(est);
+                        Console.WriteLine("Vamos a comparar por promedio ");
+                        break;
+                    case 3:
+                        Console.WriteLine("Vamos a comparar por Dni ");
+                        break;
+                    default:
+                        Console.WriteLine("Opcion incorrecta,vamos a comparar por Dni ");
+                        break;
+                }
 
                 while (cole.agregar(alumno) == true)
 
@@ -186,7 +211,9 @@ namespace Metodologias_1.Practica_1
                     dniR = dniRandom.Next(111111, 99999999);
                     legajoR = legajoRandom.Next(1111, 99999);
                     promedioR = promedioRandom.Next(11, 99);
-                    alumno = new Alumno(listaDeNombres[puntero.Next(listaDeNombres.Count - 1)], dniR, legajoR, promedioR);
+                    punteroR = puntero.Next(listaDeNombres.Count - 1);
+                    alumno = new Alumno(listaDeNombres[punteroR], dniR, legajoR, promedioR);
+                    alumno.cambiarEstrategia(est);
 
 
                 }
@@ -197,14 +224,34 @@ namespace Metodologias_1.Practica_1
             void InformarAlumnos(IColeccionable cole)
             {
                 Console.WriteLine("La coleccion tiene " + cole.cuantos() + " elementos");
-                Console.WriteLine("El Legajo minimo es " + ((Alumno)cole.minimo()).getLegajo());
-                Console.WriteLine("El Legajo maximo es " + ((Alumno)cole.maximo()).getLegajo());
+                Console.WriteLine("El valor minimo es " + ((Alumno)cole.minimo()).getNombre());
+                Console.WriteLine("El valor maximo es " + ((Alumno)cole.maximo()).getNombre());
 
-                Console.WriteLine("Ingrese el legajo a buscar ");
+                Console.WriteLine("Ingrese el valor a buscar ");
                 int n1 = Convert.ToInt32(Console.ReadLine());
-                Alumno legajoBuscado = new Alumno("x", 0, n1, n1);//
-                //Console.WriteLine("valor ingresado " + legajoBuscado.getLegajo());
-                if (cole.contiene(legajoBuscado) == true)
+                Alumno Buscado = new Alumno("x", n1, n1, n1);//
+                Console.WriteLine("Que desea buscar? 1- Legajo  2- Promedio 3- Dni ");
+                int opcion = Convert.ToInt32(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        Buscado.cambiarEstrategia(new PorLegajo());
+                        Console.WriteLine("Vamos a buscar el legajo  ");
+                        break;
+                    case 2:
+          
+                        Buscado.cambiarEstrategia(new PorPromedio());
+                        Console.WriteLine("Vamos a buscar el promedio ");
+                        break;
+                    case 3:
+                        Console.WriteLine("Vamos a buscar el Dni ");
+                        break;
+                    default:
+                        Console.WriteLine("Opcion incorrecta,vamos a buscar el Dni ");
+                        break;
+                }
+
+                if (cole.contiene(Buscado) == true)
                 {
                     Console.WriteLine("El valor buscado está en la colección");
                 }
@@ -212,8 +259,9 @@ namespace Metodologias_1.Practica_1
                 {
                     Console.WriteLine("El valor buscado NO está en la colección");
                 }
+            }
 
-
+           
 
 
 
@@ -332,8 +380,10 @@ namespace Metodologias_1.Practica_1
 
 
 
-            }
-        }
+            
+        } 
+        
+        
     }
 }
 
