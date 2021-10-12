@@ -17,6 +17,10 @@ namespace Metodologias_1.Practica_1
 		{
 			return this.valor;
 		}
+		public void setValor( int n)
+		{
+			this.valor=n ;
+		}
 		public bool sosIgual(IComparable C)
 		{
 			return this.valor == ((Numero)C).getValor();

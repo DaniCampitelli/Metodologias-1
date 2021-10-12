@@ -10,5 +10,6 @@ namespace Metodologias_1.Practica_1
        bool sosIgual(IComparable a);
         bool sosMenor(IComparable a);
         bool sosMayor(IComparable a);
+        void cambiarEstrategia(IEstrategiaDeComparacion x);
     }
 }
