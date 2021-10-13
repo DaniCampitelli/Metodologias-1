@@ -4,9 +4,9 @@ using Metodologias_1.Practica_2;
 
 namespace Metodologias_1.Practica_1
 {
-    class Cola : IColeccionable
+    class Cola : IColeccionable,Iterable
     {
-        ArrayList colaColeccionable;
+        public ArrayList colaColeccionable;
         public Cola(int tamanio)
         {
             colaColeccionable = new ArrayList(tamanio);
@@ -85,6 +85,11 @@ namespace Metodologias_1.Practica_1
                 }
             }
             return minimo;
+        }
+
+        public Iterador CrearIterador()
+        {
+            return new IteradorDeCola(this);
         }
     }
 }

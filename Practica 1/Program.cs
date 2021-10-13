@@ -261,7 +261,16 @@ namespace Metodologias_1.Practica_1
                 }
             }
 
-           
+
+            void imprimirElementos(Iterable a) {
+                Iterador b = a.CrearIterador();
+                while (!b.Fin()) {
+                    Console.WriteLine(b.Actual());// Como imprimir 
+                    b.Siguiente();
+                }
+
+
+            }
 
 
 
@@ -270,51 +279,68 @@ namespace Metodologias_1.Practica_1
 
 
 
-                /*
-
-               //#################### Ej 7 ################################
 
 
-               pila = new Pila()
-               cola = new Cola()
-               llenar(pila)
-               llenar(cola)
-               informar(pila)
-               informar(cola)
+            /*
 
-               ####################### EJ 9 ###############################
-
-                // IColeccionable pila = new Pila(10);
-               //IColeccionable cola = new Cola(10);
-              // llenar(pila);
-              // llenar(cola);
-               //informar(pila);
-              // informar(cola);
+           //#################### Ej 7 ################################
 
 
+           pila = new Pila()
+           cola = new Cola()
+           llenar(pila)
+           llenar(cola)
+           informar(pila)
+           informar(cola)
+
+           ####################### EJ 9 ###############################
+
+            // IColeccionable pila = new Pila(10);
+           //IColeccionable cola = new Cola(10);
+          // llenar(pila);
+          // llenar(cola);
+           //informar(pila);
+          // informar(cola);
 
 
-               ######################## EJ 13###############################
 
-               pila = new Pila()
-               cola = new Cola()
-               multiple = new ColeccionMultiple(pila, cola)
-               llenarPersonas(pila)
-               llenarPersonas(cola)
-               informar(multiple)
 
-               */
+           ######################## EJ 13###############################
 
-                // ##################### EJ 17################################
+           pila = new Pila()
+           cola = new Cola()
+           multiple = new ColeccionMultiple(pila, cola)
+           llenarPersonas(pila)
+           llenarPersonas(cola)
+           informar(multiple)
 
-                IColeccionable pilaPersonas = new Pila(20);
-                IColeccionable colaPersonas = new Cola(20);
-                llenarAlumnos(pilaPersonas);
-                llenarAlumnos(colaPersonas);
+           */
 
-                ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
-                InformarAlumnos(c);
+            // ##################### EJ 17################################
 
+            /* IColeccionable pilaPersonas = new Pila(20);
+              IColeccionable colaPersonas = new Cola(20);
+              llenarAlumnos(pilaPersonas);
+              llenarAlumnos(colaPersonas);
+
+              ColeccionMultiple c = new ColeccionMultiple(pilaPersonas, colaPersonas);
+              InformarAlumnos(c);
+          */
+            //####################### EJ 8 P2 ############################
+            
+            
+           Pila pila = new Pila(20);
+            Cola cola = new Cola(20);
+            Conjunto conjunto = new Conjunto(20);
+            Diccionario diccionario = new Diccionario(20);
+            llenarAlumnos(pila);
+            llenarAlumnos(cola);
+            llenarAlumnos(conjunto);
+            llenarAlumnos(diccionario);
+            imprimirElementos(pila);
+            imprimirElementos(cola);
+            imprimirElementos(conjunto);
+            imprimirElementos(diccionario);
 
 
 
@@ -330,57 +356,57 @@ namespace Metodologias_1.Practica_1
                 // test de mayor numero
                 //Console.WriteLine("el mayor es numero es  " + ((Numero)test.maximo()).getValor());
 
-                //test de sacar
-                //  while (test.cuantos() > 0)
-                //  {
-                //      Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
-                //  }
+            //test de sacar
+            //  while (test.cuantos() > 0)
+            //  {
+            //      Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
+            //  }
 
 
 
 
-                //informar(test);
+            //informar(test);
 
-                // llenar(colaP);
+            // llenar(colaP);
 
-                //informar(test2);
-
-
-
-                /*Console.WriteLine(c.contiene(n1));
-
-                Console.WriteLine(c.cuantos());
-
-                Console.WriteLine(((Numero)c.maximo()).getValor());
-                */
-
-                //informar(pilaP);
-                //informar(colaP);
+            //informar(test2);
 
 
 
+            /*Console.WriteLine(c.contiene(n1));
 
-                //informar(test);
-                //Console.WriteLine(test.cuantos());
+            Console.WriteLine(c.cuantos());
 
-                //test de sacar
-                //while (test.cuantos() > 0)
-                //{
-                //Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
-                //}
+            Console.WriteLine(((Numero)c.maximo()).getValor());
+            */
 
-
-                //llenar(test2);
-                //Console.WriteLine(test2.cuantos());
-                //test de sacar
-                //while (test2.cuantos() > 0)
-                //{
-                //    Console.WriteLine("Sacando Elemento  " + ((Numero)test2.sacar()).getValor());
-                //}
+            //informar(pilaP);
+            //informar(colaP);
 
 
 
-            
+
+            //informar(test);
+            //Console.WriteLine(test.cuantos());
+
+            //test de sacar
+            //while (test.cuantos() > 0)
+            //{
+            //Console.WriteLine("Elemento  " + ((Numero)test.sacar()).getValor());
+            //}
+
+
+            //llenar(test2);
+            //Console.WriteLine(test2.cuantos());
+            //test de sacar
+            //while (test2.cuantos() > 0)
+            //{
+            //    Console.WriteLine("Sacando Elemento  " + ((Numero)test2.sacar()).getValor());
+            //}
+
+
+
+
         } 
         
         

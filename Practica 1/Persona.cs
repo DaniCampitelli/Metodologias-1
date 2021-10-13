@@ -5,7 +5,7 @@ using Metodologias_1.Practica_2;
 
 namespace Metodologias_1.Practica_1
 {
-    class Persona : IComparable
+    class Persona : IComparable, ElementoIterable
     {
 
         private String nombre;
@@ -48,7 +48,7 @@ namespace Metodologias_1.Practica_1
         public void cambiarEstrategia(IEstrategiaDeComparacion nuevaestrategia)
         {
             {
-                this.estrategia = nuevaestrategia;
+               this.estrategia = nuevaestrategia;
 
             }
         }

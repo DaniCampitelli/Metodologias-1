@@ -6,7 +6,7 @@ using IComparable = Metodologias_1.Practica_1.IComparable;
 
 namespace Metodologias_1.Practica_2
 {
-    class Conjunto : IColeccionable
+    class Conjunto : IColeccionable,Iterable
     {
         public List<IComparable> conjunto;
         public Iterador iterador;
@@ -92,8 +92,10 @@ namespace Metodologias_1.Practica_2
             throw new NotImplementedException();
         }
 
-
-
+        public Iterador CrearIterador()
+        {
+            return new IteradorDeConjunto(this);
+        }
     }
 
        
