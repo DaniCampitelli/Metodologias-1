@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Metodologias_1.Practica_1;
-using IComparable = Metodologias_1.Practica_1.IComparable;
+
 
 namespace Metodologias_1.Practica_2
 {

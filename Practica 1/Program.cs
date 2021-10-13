@@ -329,18 +329,18 @@ namespace Metodologias_1.Practica_1
             //####################### EJ 8 P2 ############################
             
             
-           Pila pila = new Pila(20);
+           //Pila pila = new Pila(20);
             Cola cola = new Cola(20);
-            Conjunto conjunto = new Conjunto(20);
-            Diccionario diccionario = new Diccionario(20);
-            llenarAlumnos(pila);
+           // Conjunto conjunto = new Conjunto(20);
+            //Diccionario diccionario = new Diccionario(20);
+            //llenarAlumnos(pila);
             llenarAlumnos(cola);
-            llenarAlumnos(conjunto);
-            llenarAlumnos(diccionario);
-            imprimirElementos(pila);
+           // llenarAlumnos(conjunto);
+           // llenarAlumnos(diccionario);
+           // imprimirElementos(pila);
             imprimirElementos(cola);
-            imprimirElementos(conjunto);
-            imprimirElementos(diccionario);
+            //imprimirElementos(conjunto);
+            //imprimirElementos(diccionario);
 
 
 
