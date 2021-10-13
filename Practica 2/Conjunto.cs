@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Metodologias_1.Practica_1;
-using IComparable = Metodologias_1.Practica_1.IComparable;
 
 namespace Metodologias_1.Practica_2
 {
     class Conjunto : IColeccionable,Iterable
     {
         public List<IComparable> conjunto;
-        public Iterador iterador;
+        
         public Conjunto(int tamanio)
 
         {
             conjunto = new List<IComparable>(tamanio);
-            CrearIterador();
+          
             Console.WriteLine("conjunto creado con exito");
         }
 
