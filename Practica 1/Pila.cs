@@ -8,12 +8,13 @@ using Metodologias_1.Practica_2;
 namespace Metodologias_1.Practica_1
 
 {
-    class Pila : IColeccionable
+    class Pila : IColeccionable, Iterable
     {
-        ArrayList pilaColeccionable;
+        public List<ElementoIterable> pilaColeccionable;
         public Pila(int tamanio)
         {
-            pilaColeccionable = new ArrayList(tamanio);
+            pilaColeccionable = new List<ElementoIterable>(tamanio);
+            CrearIterador();
         }
 
         public IComparable sacar()
@@ -36,7 +37,7 @@ namespace Metodologias_1.Practica_1
         {
             if (pilaColeccionable.Capacity > pilaColeccionable.Count)
             {
-                pilaColeccionable.Add(c);
+                pilaColeccionable.Add((ElementoIterable)c);
                 return true;
             }
             return false;
@@ -88,6 +89,10 @@ namespace Metodologias_1.Practica_1
                 }
             }
             return minimo;
+        }
+        public Iterador CrearIterador()
+        {
+            return new IteradorDePila(this);
         }
     }
 

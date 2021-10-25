@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using Metodologias_1.Practica_1;
-using IComparable = Metodologias_1.Practica_1.IComparable;
+
 
 
 namespace Metodologias_1.Practica_2
 {
-    class Diccionario:IColeccionable
+    class Diccionario:IColeccionable,Iterable
     {
         public Conjunto conj;
 
@@ -28,10 +28,10 @@ namespace Metodologias_1.Practica_2
         {
             ClaveValor a = new ClaveValor(claveNumerica, valor);
 
-            foreach (ClaveValor x in this.conj.conjunto)
-                if (x.GetClave().SosIgual(claveNumerica))
+            foreach (ClaveValor x in conj.conjunto)
+                if (x.getClave().sosIgual(claveNumerica))
                 {
-                    x.SetValor(valor);
+                    x.setValor(valor);
 
                     return true;
                 }
@@ -91,8 +91,8 @@ namespace Metodologias_1.Practica_2
         {
             foreach (ClaveValor elemento in conj.conjunto)
             {
-                if (elemento.SosIgual(buscado))
-                    return elemento.GetValor();
+                if (elemento.sosIgual(buscado))
+                    return elemento.getValor();
 
 
             }

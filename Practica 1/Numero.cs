@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologias_1.Practica_2;
 
 
 namespace Metodologias_1.Practica_1
 {
-	class Numero : IComparable
+	class Numero : IComparable,ElementoIterable
 	{
 		private int valor;
 		public Numero(int v)
@@ -33,5 +34,10 @@ namespace Metodologias_1.Practica_1
 		{
 			return this.valor > ((Numero)C).getValor();
 		}
-	}
+
+        public void cambiarEstrategia(IEstrategiaDeComparacion x)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
